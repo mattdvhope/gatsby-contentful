@@ -12,7 +12,7 @@ const IndexPage = ({data}) => (
   <ul>
     {data.allContentfulBlog.edges.map((edge) => <BlogPost node={edge.node} />)}
   </ul>
-)
+) 
 
 export default IndexPage
 
