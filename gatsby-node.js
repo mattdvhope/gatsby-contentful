@@ -13,6 +13,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               node {
                 id
                 slug
+                content
               }
             }
           }
@@ -27,7 +28,8 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             path: edge.node.slug,
             component: blogPostTemplate,
             context: {
-              slug: edge.node.slug
+              slug: edge.node.slug,
+              content: edge.node.content
             }
           })
         })

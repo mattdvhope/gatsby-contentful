@@ -6,9 +6,13 @@ class BlogPost extends Component {
 		const {
 			title
 		} = this.props.data.contentfulBlog
+		const {
+			content
+		} = this.props.data.contentfulBlog
 		return (
 			<div>
 				<h1>{title}</h1>
+				<h2>{content}</h2>
 			</div>
 		);
 	}
@@ -24,6 +28,7 @@ export const pageQuery = graphql`
 	query blogPostQuery($slug: String!) {
 		contentfulBlog(slug: {eq: $slug}) {
 			title
+			content
 			slug
 		}
 	}
