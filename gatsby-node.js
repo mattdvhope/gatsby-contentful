@@ -30,7 +30,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
               slug: edge.node.slug
             }
           })
-        }) 
+        })
         return
       })
     )
