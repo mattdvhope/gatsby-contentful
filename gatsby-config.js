@@ -10,6 +10,7 @@ module.exports = {
         accessToken: `8ef50475ae3bdbcbef188386e10700e83eb422118690827c81d9b4807252ebc2`
       }
     },
-    'gatsby-plugin-react-helmet'
+    `gatsby-transformer-remark`, // will detect any text node that has markdown and then parse it (into HTML??)
+    `gatsby-plugin-react-helmet`
   ],
 }
