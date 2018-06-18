@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
-import 'font-awesome/css/font-awesome.min.css';
-import 'bootstrap/dist/css/bootstrap.min.css'; 
-import 'mdbreact/dist/css/mdb.css';
+// import 'font-awesome/css/font-awesome.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css'; 
+// import 'mdbreact/dist/css/mdb.css';
 
 
 const BlogPost = ({node}) => {
