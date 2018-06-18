@@ -2,10 +2,13 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const BlogPost = ({node}) => {
+  console.log(node.id)
+
   return (
-    <li>
+    <li key={node.id}>
       <Link to={node.slug}>{node.title}</Link>
       <div>{node.content.childMarkdownRemark.excerpt}</div>
+      <img src={node.featuredImage.resolutions.src} alt=""/>
     </li>
   )
 }
@@ -24,11 +27,17 @@ export const pageQuery = graphql`
     }) {
       edges {
         node {
+          id
           title
           slug
           content {
             childMarkdownRemark {
               excerpt(pruneLength: 110)
+            }
+          }
+          featuredImage {
+            resolutions(width: 300, height: 300) {
+              src
             }
           }
         }
