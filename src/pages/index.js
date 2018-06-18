@@ -1,9 +1,5 @@
 import React from 'react'
 import Link from 'gatsby-link'
-// import 'font-awesome/css/font-awesome.min.css';
-// import 'bootstrap/dist/css/bootstrap.min.css'; 
-// import 'mdbreact/dist/css/mdb.css';
-
 
 const BlogPost = ({node}) => {
 console.log(node.publishDate);
@@ -17,11 +13,9 @@ console.log(node.publishDate);
   )
 }
 const IndexPage = ({data}) => (
-    <div className="container">
     <ul>
       {data.allContentfulBlog.edges.map((edge) => <BlogPost node={edge.node} />)}
     </ul>
-    </div>
 )
 
 export default IndexPage
