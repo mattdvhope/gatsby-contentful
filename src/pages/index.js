@@ -2,6 +2,8 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const BlogPost = ({node}) => {
+console.log(node.publishDate);
+
   return (
     <li key={node.id}>
       <Link to={node.slug}>{node.title}</Link>
@@ -25,7 +27,7 @@ export const pageQuery = graphql`
         node_locale: {eq: "en-US"}
       },
       sort: {
-        fields: [publishDate], order: ASC
+        fields: [publishDate], order: DESC
       }
     ) {
       edges {
@@ -33,6 +35,7 @@ export const pageQuery = graphql`
           id
           title
           slug
+          publishDate
           content {
             childMarkdownRemark {
               excerpt(pruneLength: 110)
