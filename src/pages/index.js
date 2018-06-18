@@ -20,10 +20,13 @@ export default IndexPage
 
 export const pageQuery = graphql`
   query pageQuery {
-    allContentfulBlog (filter: {
-      node_locale: {eq: "en-US"}
-    },
-    sort:{ fields: [publishDate], order: DESC }
+    allContentfulBlog (
+      filter: {
+        node_locale: {eq: "en-US"}
+      },
+      sort: {
+        fields: [publishDate], order: ASC
+      }
     ) {
       edges {
         node {
