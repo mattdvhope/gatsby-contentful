@@ -5,6 +5,7 @@ const BlogPost = ({node}) => {
   return (
     <li>
       <Link to={node.slug}>{node.title}</Link>
+      <div>{node.content.childMarkdownRemark.excerpt}</div>
     </li>
   )
 }
@@ -25,6 +26,11 @@ export const pageQuery = graphql`
         node {
           title
           slug
+          content {
+            childMarkdownRemark {
+              excerpt(pruneLength: 110)
+            }
+          }
         }
       }
     }
