@@ -2,8 +2,6 @@ import React from 'react'
 import Link from 'gatsby-link'
 
 const BlogPost = ({node}) => {
-  console.log(node.id)
-
   return (
     <li key={node.id}>
       <Link to={node.slug}>{node.title}</Link>
@@ -24,7 +22,9 @@ export const pageQuery = graphql`
   query pageQuery {
     allContentfulBlog (filter: {
       node_locale: {eq: "en-US"}
-    }) {
+    },
+    sort:{ fields: [publishDate], order: DESC }
+    ) {
       edges {
         node {
           id
@@ -36,8 +36,9 @@ export const pageQuery = graphql`
             }
           }
           featuredImage {
-            resolutions(width: 300, height: 300) {
+            resolutions(width: 200, height: 100) {
               src
+              srcSet
             }
           }
         }
